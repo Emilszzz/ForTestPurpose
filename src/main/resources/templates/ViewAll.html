@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Spring Boot</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+<div th:if="${not #lists.isEmpty(persons)}">
+<h2>Author List</h2>
+<table class="glyphicon glyphicon-calendar">
+
+<tr th:each="person : ${persons}">
+<td th:text="${person.id}"></td>
+<td th:text="${person.name}"></td>
+<td th:text="${person.Age}"></td>
+</tr>
+</table>
+<tr th:each="person : ${persons}">
+<!-- <th:block input type="text" th:utext="${person.Age}"/> -->
+<p> Name:<input type="text" th:value="${person.name}" /> </p>
+<p> Age:<input type="text" th:value="${person.Age}" /> </p>
+ </tr>
+<!-- <tr th:each="person : ${persons}">
+<<td <p>Name: <input type="text" th:field="${person.name}"/></p> </td>
+<td <p>Age: <input type="number" th:field="${person.Age}"/></p> </td> 
+</tr>-->
+</div>
+ </form>
+</body>
+</html>
